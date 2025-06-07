@@ -2,78 +2,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nikhil Garg - Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nikhil Garg - SDET Portfolio</title>
   <style>
     :root {
-      --bg-color: #f9f9f9;
-      --text-color: #333;
-      --link-color: #007acc;
+      --bg: #f5f5f5;
+      --text: #222;
+      --primary: #007acc;
     }
-
     [data-theme="dark"] {
-      --bg-color: #1e1e1e;
-      --text-color: #f0f0f0;
-      --link-color: #66aaff;
+      --bg: #1a1a1a;
+      --text: #eee;
+      --primary: #66aaff;
     }
-
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
       transition: all 0.3s ease;
     }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
+    header, footer {
       text-align: center;
+      padding: 20px;
     }
-
     h1 {
-      margin-bottom: 10px;
+      margin: 0;
     }
-
-    a.download-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: var(--link-color);
+    .section {
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: var(--primary);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      margin: 20px 0;
+      border-radius: 5px;
     }
-
-    .social-icons a {
+    .social {
+      margin: 15px;
+    }
+    .social a {
       margin: 0 10px;
-      text-decoration: none;
-      color: var(--link-color);
-      font-size: 24px;
+      color: var(--primary);
+      font-weight: bold;
     }
-
-    embed {
-      border: 1px solid #ccc;
-      border-radius: 8px;
+    iframe {
       width: 100%;
-      height: 600px;
+      height: 500px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
     }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #888;
+    .project {
+      background: white;
+      border-radius: 10px;
+      margin: 15px 0;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    .toggle-btn {
-      margin-top: 20px;
-      padding: 6px 14px;
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+    .toggle {
+      margin: 10px;
+      padding: 6px 12px;
+      background: var(--primary);
       border: none;
       border-radius: 4px;
-      cursor: pointer;
-      background-color: var(--link-color);
       color: white;
+      cursor: pointer;
     }
   </style>
   <script>
@@ -82,7 +87,6 @@
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
     }
-
     window.onload = function() {
       const savedTheme = localStorage.getItem("theme") || "light";
       document.documentElement.setAttribute("data-theme", savedTheme);
@@ -90,23 +94,45 @@
   </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Nikhil Garg - Resume</h1>
-
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/garg-nikhil/" target="_blank">🔗 LinkedIn</a>
-      <a href="https://github.com/garg-nikhil" target="_blank">💻 GitHub</a>
+  <header>
+    <h1>Nikhil Garg</h1>
+    <p>Senior SDET | Test Architect | QA Leader</p>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/garg-nikhil/" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/garg-nikhil" target="_blank">GitHub</a> |
+      <a href="Nikhil SDET 11Yrs.pdf" download>Download Resume</a>
     </div>
+    <button class="toggle" onclick="toggleTheme()">🌗 Toggle Dark Mode</button>
+  </header>
 
-    <a class="download-btn" href="Nikhil SDET 11Yrs.pdf" download>Download PDF</a>
-
-    <embed src="Nikhil SDET 11Yrs.pdf" type="application/pdf" />
-
-    <div class="footer">
-      Updated: 2025
-    </div>
-
-    <button class="toggle-btn" onclick="toggleTheme()">Toggle Dark Mode</button>
+  <div class="section">
+    <h2>📄 Live Resume (Google Docs)</h2>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vRf8ZMNxhlrFxOtDN05PBjSogABOCi2k8sPgWAZEXJlyWe4wAkzyb0I4ySHvHfsx0xut2nmG_lK-F2r/pub?embedded=true"></iframe>
   </div>
+
+  <div class="section">
+    <h2>💼 Projects</h2>
+    <div class="project">
+      <h3>Ecommerce and Assessment Platforms</h3>
+      <p><strong>Tech Stack:</strong> Selenium, Java, Rest-assured, Postman, JIRA, Zephyr, MySQL Workbench, GitHub, Putty, Jenkins, Maven, Process Improvement, Project Management, Gen AI testing, Docker, Kubernetes, SQL, Oracle, API, Core Java, Strategic Planning, Communication, Problem-Solving, Analytical Thinking, IntelliJ IDEA, VS Code.</p>
+      <p><strong>Clients:</strong> SHL (Assessment), Norton Antivirus (Security)</p>
+      <p><strong>Team Size:</strong> Managed 10+ QA Engineers (Automation + Manual)</p>
+      <p><strong>Role:</strong> Individual Contributor, Delivery Owner, Tech Lead, Stakeholder POC</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📬 Contact Me</h2>
+    <form action="https://formspree.io/f/xyyqvbdp" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>Updated: Nikhil Garg ©2025</p>
+  </footer>
 </body>
 </html>
