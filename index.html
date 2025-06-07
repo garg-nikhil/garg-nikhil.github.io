@@ -2,137 +2,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nikhil Garg - SDET Portfolio</title>
   <style>
     :root {
-      --bg: #f5f5f5;
-      --text: #222;
-      --primary: #007acc;
+      --bg-color: #fdfdfd;
+      --text-color: #1e1e1e;
+      --accent-color: #007acc;
     }
     [data-theme="dark"] {
-      --bg: #1a1a1a;
-      --text: #eee;
-      --primary: #66aaff;
+      --bg-color: #121212;
+      --text-color: #eaeaea;
+      --accent-color: #66aaff;
     }
     body {
-      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      transition: all 0.3s ease;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
     }
     header, footer {
       text-align: center;
-      padding: 20px;
+      padding: 2rem 1rem;
     }
-    h1 {
+    header h1 {
       margin: 0;
+      font-size: 2rem;
     }
-    .section {
+    .container {
       max-width: 960px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 1rem;
     }
-    .btn {
-      padding: 10px 20px;
-      background: var(--primary);
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.3rem;
+    }
+    a, .btn {
       color: white;
+      background-color: var(--accent-color);
       text-decoration: none;
+      padding: 0.6rem 1rem;
       border-radius: 5px;
+      display: inline-block;
     }
-    .social {
-      margin: 15px;
-    }
-    .social a {
-      margin: 0 10px;
-      color: var(--primary);
-      font-weight: bold;
+    a.download {
+      margin-top: 1rem;
     }
     iframe {
       width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 10px;
+      height: 600px;
+      border: 1px solid var(--accent-color);
+      border-radius: 6px;
+    }
+    .project, table.tech-stack {
+      margin: 1rem 0;
+      width: 100%;
     }
     .project {
-      background: white;
-      border-radius: 10px;
-      margin: 15px 0;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--accent-color);
+      padding: 1rem;
+      background: rgba(0,0,0,0.03);
+      border-radius: 5px;
+    }
+    [data-theme="dark"] .project {
+      background: rgba(255,255,255,0.05);
+    }
+    table.tech-stack {
+      border-collapse: collapse;
+    }
+    table.tech-stack th, table.tech-stack td {
+      border: 1px solid var(--accent-color);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    table.tech-stack th {
+      background: var(--accent-color);
+      color: #fff;
+    }
+    table.tech-stack tr:nth-child(even) {
+      background: rgba(0,0,0,0.02);
+    }
+    [data-theme="dark"] table.tech-stack tr:nth-child(even) {
+      background: rgba(255,255,255,0.05);
     }
     form input, form textarea {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 0.75rem;
+      margin: 0.5rem 0 1rem;
       border: 1px solid #aaa;
-      border-radius: 5px;
-    }
-    .toggle {
-      margin: 10px;
-      padding: 6px 12px;
-      background: var(--primary);
-      border: none;
       border-radius: 4px;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+    button.toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 6px 10px;
+      border: none;
+      background: var(--accent-color);
       color: white;
+      border-radius: 4px;
       cursor: pointer;
     }
   </style>
   <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", saved);
+    });
     function toggleTheme() {
-      const theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-    }
-    window.onload = function() {
-      const savedTheme = localStorage.getItem("theme") || "light";
-      document.documentElement.setAttribute("data-theme", savedTheme);
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
     }
   </script>
 </head>
 <body>
+  <button class="toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
   <header>
     <h1>Nikhil Garg</h1>
-    <p>Senior SDET | Test Architect | QA Leader</p>
-    <div class="social">
+    <p>Senior SDET | Test Architect | QA Strategist</p>
+    <p>
       <a href="https://www.linkedin.com/in/garg-nikhil/" target="_blank">LinkedIn</a> |
       <a href="https://github.com/garg-nikhil" target="_blank">GitHub</a> |
-      <a href="Nikhil SDET 11Yrs.pdf" download>Download Resume</a>
-    </div>
-    <button class="toggle" onclick="toggleTheme()">🌗 Toggle Dark Mode</button>
+    <a class="download" href="resume.pdf" download>📥 Download CV</a>
+    </p>
   </header>
 
-  <div class="section">
-    <h2>📄 Latest Resume</h2>
+  <div class="container">
+    <h2>📄Latest CV</h2>
     <iframe src="https://docs.google.com/document/d/1vath0U13ho5bdwRBtSSaUd1n9uOPGR3tQEQmmLMLkU8/edit?usp=sharing"></iframe>
-  </div>
 
-  <div class="section">
     <h2>💼 Projects</h2>
     <div class="project">
-      <h3>Ecommerce and Assessment Platforms</h3>
-      <p><strong>Tech Stack:</strong> Selenium, Java, Rest-assured, Postman, JIRA, Zephyr, MySQL Workbench, GitHub, Putty, Jenkins, Maven, Process Improvement, Project Management, Gen AI testing, Docker, Kubernetes, SQL, Oracle, API, Core Java, Strategic Planning, Communication, Problem-Solving, Analytical Thinking, IntelliJ IDEA, VS Code.</p>
-      <p><strong>Clients:</strong> SHL (Assessment), Norton Antivirus (Security)</p>
-      <p><strong>Team Size:</strong> Managed 10+ QA Engineers (Automation + Manual)</p>
-      <p><strong>Role:</strong> Individual Contributor, Delivery Owner, Tech Lead, Stakeholder POC</p>
+      <strong>Domain Exposure: Banking, Security, E-commerce, Assessment Platforms</strong><br/>
+      <em>Clients:</em> SHL (Assessment), Norton Antivirus (Security)<br/>
+      <em>Team Size:</em> 10+ QA Engineers (Automation + Manual)<br/>
+      <em>Role:</em> IC, Delivery Owner, Tech Lead, Stakeholder POC<br/>
+      <em>Education:</em> B.E. in Information & Technology-2014. University of Pune, India
     </div>
-  </div>
 
-  <div class="section">
+    <h2>🛠 Tech Stack</h2>
+    <table class="tech-stack">
+      <tr><th>Category</th><th>Tools / Technologies</th></tr>
+      <tr><td>Test Automation &amp; QA Strategy</td><td>Selenium, Cucumber, TestNG, JUnit, Rest-Assured, Postman, ReadyAPI, WireMock, Faker</td></tr>
+      <tr><td>Frameworks &amp; Testing Models</td><td>Hybrid, BDD/TDD, POM, Data-driven, API-first testing</td></tr>
+      <tr><td>Leadership &amp; Team Management</td><td>Team mentoring, stakeholder engagement, performance reviews, capacity planning, QA process improvement</td></tr>
+      <tr><td>Client &amp; Stakeholder Engagement</td><td>Requirement gathering, customer calls, sprint demos, UAT support, escalation management</td></tr>
+      <tr><td>Programming &amp; Scripting</td><td>Java, SQL, JavaScript, HTML, XML, JSON</td></tr>
+      <tr><td>Version Control &amp; Build Tools</td><td>GitHub, Perforce, Jenkins, Maven</td></tr>
+      <tr><td>CI/CD &amp; DevOps</td><td>AWS, Azure DevOps, Docker, Kubernetes, Selenium Grid, CodePipeline, CloudWatch, GitHub Actions</td></tr>
+      <tr><td>Process &amp; Quality Management</td><td>Agile, Scrum, Test Planning, RCA, Defect Triage, Risk Mitigation, Test Metrics</td></tr>
+      <tr><td>Operating Systems &amp; Environments</td><td>Windows, Linux, VMware</td></tr>
+      <tr><td>Domain Expertise</td><td>Banking, Security, E-commerce, Assessment Platforms</td></tr>
+      <tr><td>AI &amp; Generative Testing</td><td>Prompt engineering, LLM output validation, token analysis, text-to-image/video tools, Gen AI integration</td></tr>
+      <tr><td>Soft Skills</td><td>Analytical thinking, cross-functional collaboration, effective communication</td></tr>
+    </table>
+
     <h2>📬 Contact Me</h2>
-    <form action="https://formspree.io/f/xyyqvbdp" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <form action="https://formspree.io/f/mjkrgdvd" method="POST">
+      <label>Name</label>
+      <input type="text" name="name" required/>
+      <label>Email</label>
+      <input type="email" name="_replyto" required/>
+      <label>Message</label>
+      <textarea name="message" rows="5" required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </form>
   </div>
 
   <footer>
-    <p>Updated: Nikhil Garg ©2025</p>
+    <p>Nikhil Garg ©2025</p>
   </footer>
 </body>
 </html>
