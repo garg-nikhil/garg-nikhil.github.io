@@ -111,6 +111,15 @@
       border-radius: 4px;
       cursor: pointer;
     }
+.headshot {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+  margin-bottom: 1rem;
+}
+
   </style>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -129,6 +138,7 @@
 <body>
   <button class="toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
   <header>
+  <img src="./headshot.jpeg" alt="Nikhil Garg" class="headshot" />
     <h1>Nikhil Garg</h1>
     <p>Senior SDET | Test Architect | QA Strategist</p>
     <p>
