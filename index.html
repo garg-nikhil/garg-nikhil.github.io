@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nikhil Garg - Resume</title>
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --link-color: #007acc;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1e1e1e;
+      --text-color: #f0f0f0;
+      --link-color: #66aaff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    a.download-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: var(--link-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--link-color);
+      font-size: 24px;
+    }
+
+    embed {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+      height: 600px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    .toggle-btn {
+      margin-top: 20px;
+      padding: 6px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: var(--link-color);
+      color: white;
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      const theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }
+
+    window.onload = function() {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Nikhil Garg - Resume</h1>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/garg-nikhil/" target="_blank">🔗 LinkedIn</a>
+      <a href="https://github.com/garg-nikhil" target="_blank">💻 GitHub</a>
+    </div>
+
+    <a class="download-btn" href="Nikhil SDET 11Yrs.pdf" download>Download PDF</a>
+
+    <embed src="Nikhil SDET 11Yrs.pdf" type="application/pdf" />
+
+    <div class="footer">
+      Updated: 2025
+    </div>
+
+    <button class="toggle-btn" onclick="toggleTheme()">Toggle Dark Mode</button>
+  </div>
+</body>
+</html>
