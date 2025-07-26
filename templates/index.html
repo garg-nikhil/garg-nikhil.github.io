@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nikhil Garg - SDET Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #fdfdfd;
+      --text-color: #1e1e1e;
+      --accent-color: #007acc;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eaeaea;
+      --accent-color: #66aaff;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.3rem;
+    }
+    a, .btn {
+      color: white;
+      background-color: var(--accent-color);
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    a.download {
+      margin-top: 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid var(--accent-color);
+      border-radius: 6px;
+    }
+    .project, table.tech-stack {
+      margin: 1rem 0;
+      width: 100%;
+    }
+    .project {
+      border-left: 4px solid var(--accent-color);
+      padding: 1rem;
+      background: rgba(0,0,0,0.03);
+      border-radius: 5px;
+    }
+    [data-theme="dark"] .project {
+      background: rgba(255,255,255,0.05);
+    }
+    table.tech-stack {
+      border-collapse: collapse;
+    }
+    table.tech-stack th, table.tech-stack td {
+      border: 1px solid var(--accent-color);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    table.tech-stack th {
+      background: var(--accent-color);
+      color: #fff;
+    }
+    table.tech-stack tr:nth-child(even) {
+      background: rgba(0,0,0,0.02);
+    }
+    [data-theme="dark"] table.tech-stack tr:nth-child(even) {
+      background: rgba(255,255,255,0.05);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+    button.toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 6px 10px;
+      border: none;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+.headshot {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+  margin-bottom: 1rem;
+}
+    /* Chatbot styles */
+    #chatbox {
+      width: 400px;
+      margin: 50px auto 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #ccc;
+    }
+    .message { margin: 10px 0; }
+    .user { color: #007bff; }
+    .bot { color: #28a745; }
+    @media (max-width: 600px) {
+      #chatbox { width: 98%; margin: 20px auto; }
+    }
+  </style>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", saved);
+    });
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    }
+  </script>
+</head>
+<body>
+  <button class="toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
+  <header>
+  <img src="./headshot.jpeg" alt="Nikhil Garg" class="headshot" />
+    <h1>Nikhil Garg</h1>
+    <p>Senior SDET | Test Architect | QA Strategist</p>
+    <p>
+      <a href="https://www.linkedin.com/in/garg-nikhil/" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/garg-nikhil" target="_blank">GitHub</a> |
+    <a class="download" href="Nikhil SDET 11Yrs.pdf" download>📥 Download CV</a>
+    </p>
+  </header>
+
+  <div class="container">
+    <h2>📄Latest CV</h2>
+    <iframe src="https://docs.google.com/document/d/1A2gj4IqJwxFxgdRykm3mJ_OZaxwORkOpcYHQTKCCn-k/edit?usp=sharing"></iframe>
+
+    <h2>💼 Projects</h2>
+    <div class="project">
+      <strong>Domain Exposure: Banking, Security, E-commerce, Assessment Platforms</strong><br/>
+      <em>Clients:</em> SHL (Assessment), Norton Antivirus (Security)<br/>
+      <em>Team Size:</em> 10+ QA Engineers (Automation + Manual)<br/>
+      <em>Role:</em> IC, Delivery Owner, Tech Lead, Stakeholder POC<br/>
+      <em>Education:</em> B.E. in Information & Technology-2014. University of Pune, India
+    </div>
+
+    <h2>🛠 Tech Stack</h2>
+    <table class="tech-stack">
+      <tr><th>Category</th><th>Tools / Technologies</th></tr>
+      <tr><td>Test Automation &amp; QA Strategy</td><td>Selenium, Cucumber, TestNG, JUnit, Rest-Assured, Postman, ReadyAPI, WireMock, Faker</td></tr>
+      <tr><td>Frameworks &amp; Testing Models</td><td>Hybrid, BDD/TDD, POM, Data-driven, API-first testing</td></tr>
+      <tr><td>Leadership &amp; Team Management</td><td>Team mentoring, stakeholder engagement, performance reviews, capacity planning, QA process improvement</td></tr>
+      <tr><td>Client &amp; Stakeholder Engagement</td><td>Requirement gathering, customer calls, sprint demos, UAT support, escalation management</td></tr>
+      <tr><td>Programming &amp; Scripting</td><td>Java, SQL, JavaScript, HTML, XML, JSON</td></tr>
+      <tr><td>Version Control &amp; Build Tools</td><td>GitHub, Perforce, Jenkins, Maven</td></tr>
+      <tr><td>CI/CD &amp; DevOps</td><td>AWS, Azure DevOps, Docker, Kubernetes, Selenium Grid, CodePipeline, CloudWatch, GitHub Actions</td></tr>
+      <tr><td>Process &amp; Quality Management</td><td>Agile, Scrum, Test Planning, RCA, Defect Triage, Risk Mitigation, Test Metrics</td></tr>
+      <tr><td>Operating Systems &amp; Environments</td><td>Windows, Linux, VMware</td></tr>
+      <tr><td>Domain Expertise</td><td>Banking, Security, E-commerce, Assessment Platforms</td></tr>
+      <tr><td>AI &amp; Generative Testing</td><td>Prompt engineering, LLM output validation, token analysis, text-to-image/video tools, Gen AI integration</td></tr>
+      <tr><td>Soft Skills</td><td>Analytical thinking, cross-functional collaboration, effective communication</td></tr>
+    </table>
+
+    <h2>📬 Contact Me</h2>
+    <form action="https://formspree.io/f/mjkrgdvd" method="POST">
+      <label>Name</label>
+      <input type="text" name="name" required/>
+      <label>Email</label>
+      <input type="email" name="_replyto" required/>
+      <label>Message</label>
+      <textarea name="message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Chatbot at the bottom -->
+  <div id="chatbox">
+    <h2>AI Chatbot</h2>
+    <div id="messages"></div>
+    <input type="text" id="user_input" placeholder="Type your message..." style="width:80%;">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+  <script>
+    function sendMessage() {
+      var input = document.getElementById('user_input');
+      var msg = input.value;
+      if (!msg) return;
+      var messages = document.getElementById('messages');
+      messages.innerHTML += '<div class="message user"><b>You:</b> ' + msg + '</div>';
+      input.value = '';
+      fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      })
+      .then(response => response.json())
+      .then(data => {
+        messages.innerHTML += '<div class="message bot"><b>Bot:</b> <pre style="white-space:pre-wrap;">' + data.reply + '</pre></div>';
+        messages.scrollTop = messages.scrollHeight;
+      });
+    }
+    // Add Enter key event listener
+    document.getElementById('user_input').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  </script>
+  <footer>
+    <p>Nikhil Garg ©2025</p>
+  </footer>
+</body>
+</html>
